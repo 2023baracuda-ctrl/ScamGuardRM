@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politica de confidențialitate — ScamGuard</title>
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="img/icon-full.png" alt="ScamGuard">
+      <span>ScamGuard</span>
+    </a>
+    <div class="lang-switch">
+      <a href="privacy-ru.html">RU</a>
+      <a href="privacy-ro.html" class="active">RO</a>
+      <a href="privacy-en.html">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="doc-page">
+  <h1>Politica de confidențialitate</h1>
+  <p class="doc-meta">În vigoare din 30 iunie 2026. Versiunea 1.1</p>
+
+  <p>ScamGuard este o aplicație Android gratuită care ajută la prevenirea fraudelor telefonice. Această politică explică ce date prelucrează aplicația, unde sunt păstrate și ce se transmite în afara dispozitivului. Pe scurt: <strong>conținutul SMS-urilor dvs. nu părăsește niciodată dispozitivul</strong>.</p>
+
+  <h2>1. Cine suntem</h2>
+  <p>ScamGuard este un proiect personal non-comercial, dezvoltat de o persoană fizică din Chișinău, Republica Moldova. Contact: <a href="mailto:scamguardrm@gmail.com">scamguardrm@gmail.com</a>.</p>
+  <p>În sensul Regulamentului UE 2016/679 (GDPR) și al Legii Republicii Moldova nr. 133/2011 privind protecția datelor cu caracter personal, operatorul de date în cadrul acestei aplicații este dezvoltatorul.</p>
+
+  <h2>2. Ce date prelucrează aplicația</h2>
+  <p>Aplicația lucrează cu trei categorii de date, <strong>iar toate rămân pe dispozitivul dvs.</strong>:</p>
+  <ul>
+    <li><strong>Conținutul SMS-urilor primite</strong> — analizat local pentru identificarea codurilor unice și a legăturii cu un apel activ. Nu se transmite în afara dispozitivului.</li>
+    <li><strong>Statusul apelului telefonic</strong> — aplicația știe dacă este un apel activ chiar acum și ce număr a sunat ultima dată. Aceste date sunt folosite doar în momentul funcționării și nu se păstrează.</li>
+    <li><strong>Istoricul detecțiilor</strong> — lista cazurilor când aplicația a afișat un avertisment. Se păstrează doar în memoria dispozitivului, poate fi șters din Setări.</li>
+  </ul>
+
+  <h2>3. Ce se transmite pe server</h2>
+  <p>Aplicația face <strong>o singură</strong> cerere de rețea de ieșire:</p>
+  <ul>
+    <li><strong>Confirmare anonimă a acceptării termenilor.</strong> La prima rulare, când acceptați această Politică și Acordul utilizatorului, pe server se trimite o înregistrare anonimă: versiunea termenilor, data acceptării și hash-ul SHA-256 al identificatorului de sistem al dispozitivului Android. Din acest hash este imposibil de recuperat numele, numărul, email-ul sau alte informații personale ale dvs. — este doar un șir de 64 de caractere.</li>
+  </ul>
+  <p>Această înregistrare este stocată pe serverele Cloudflare (KV Storage) și folosită exclusiv ca dovadă juridică a obținerii consimțământului. Termenul de păstrare — nelimitat, deoarece ștergerea ar lipsi dovada de bază. Aceasta corespunde excepției din articolul 17(3)(e) GDPR.</p>
+  <p>De asemenea, aplicația solicită periodic (o dată pe zi) o actualizare a bazei de organizații (bănci, telecom, instituții de stat din Moldova) de pe același server. Această cerere este anonimă.</p>
+
+  <h2>4. Ce NU face aplicația</h2>
+  <ul>
+    <li>Nu transmite conținutul SMS-urilor nicăieri</li>
+    <li>Nu stochează date în cloud</li>
+    <li>Nu folosește analytics (Google Analytics, Firebase Analytics etc.)</li>
+    <li>Nu afișează reclame</li>
+    <li>Nu transmite date către terți</li>
+    <li>Nu folosește cookies sau alte tehnologii de urmărire</li>
+    <li>Nu solicită acces la lista de contacte, fotografii, fișiere, locația GPS</li>
+  </ul>
+
+  <h2>5. Servicii terțe</h2>
+  <p>Aplicația folosește Cloudflare Workers și Cloudflare KV pentru stocarea confirmărilor anonime ale acceptării termenilor. Cloudflare procesează datele pe teritoriul UE. Politica lor de confidențialitate este disponibilă la <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>.</p>
+  <p>Aplicația este distribuită prin GitHub Releases și (planificat) Google Play. La descărcare se aplică politicile de confidențialitate ale GitHub sau Google.</p>
+
+  <h2>6. Drepturile dvs.</h2>
+  <p>Conform GDPR și Legii nr. 133/2011, aveți următoarele drepturi:</p>
+  <ul>
+    <li><strong>Dreptul de a ști ce date despre dvs. sunt prelucrate</strong> — acest document răspunde exhaustiv la această întrebare</li>
+    <li><strong>Dreptul la ștergere</strong> — toate datele locale de pe dispozitivul dvs. pot fi șterse prin curățarea datelor aplicației din setările de sistem Android. Hash-ul anonim de pe server nu vă identifică personal și este păstrat ca dovadă juridică (excepția art. 17(3)(e) GDPR)</li>
+    <li><strong>Dreptul de a obiecta</strong> — puteți înceta să folosiți aplicația oricând, pur și simplu dezinstalând-o</li>
+    <li><strong>Dreptul de a depune o plângere</strong> — la Centrul Național pentru Protecția Datelor cu Caracter Personal al Moldovei (datepersonale.md) sau la autoritatea de supraveghere din țara dvs. de reședință</li>
+  </ul>
+
+  <h2>7. Copii</h2>
+  <p>Aplicația este destinată persoanelor cu vârsta de peste 16 ani. Acceptând Acordul utilizatorului, confirmați că aveți cel puțin 16 ani.</p>
+
+  <h2>8. Securitate</h2>
+  <p>Deoarece datele principale sunt stocate local pe dispozitiv, securitatea depinde în primul rând de cât de bine este protejat dispozitivul însuși (cod PIN, criptare). Pentru partea de server folosim măsuri standard de protecție Cloudflare.</p>
+
+  <h2>9. Modificări ale politicii</h2>
+  <p>Dacă această politică se schimbă semnificativ, aplicația va afișa o notificare și va cere reacceptarea termenilor. Corectările minore sunt publicate pe această pagină cu actualizarea datei la începutul documentului.</p>
+
+  <h2>10. Contact</h2>
+  <p>Pentru orice întrebări legate de protecția datelor dvs.:<br>
+  Email: <a href="mailto:scamguardrm@gmail.com">scamguardrm@gmail.com</a></p>
+
+  <p style="margin-top: 40px;"><a href="index.html">← Înapoi la pagina principală</a></p>
+</div>
+
+</body>
+</html>

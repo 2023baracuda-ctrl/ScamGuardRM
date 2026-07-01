@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — ScamGuard</title>
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="img/icon-full.png" alt="ScamGuard">
+      <span>ScamGuard</span>
+    </a>
+    <div class="lang-switch">
+      <a href="privacy-ru.html">RU</a>
+      <a href="privacy-ro.html">RO</a>
+      <a href="privacy-en.html" class="active">EN</a>
+    </div>
+  </div>
+</header>
+
+<div class="doc-page">
+  <h1>Privacy Policy</h1>
+  <p class="doc-meta">Effective from June 30, 2026. Version 1.1</p>
+
+  <p>ScamGuard is a free Android app that helps prevent phone fraud. This policy explains what data the app processes, where it's stored, and what is sent outside the device. In short: <strong>the content of your SMS never leaves your device</strong>.</p>
+
+  <h2>1. Who we are</h2>
+  <p>ScamGuard is a personal non-commercial project, developed by an individual in Chișinău, Republic of Moldova. Contact: <a href="mailto:scamguardrm@gmail.com">scamguardrm@gmail.com</a>.</p>
+  <p>In the meaning of EU Regulation 2016/679 (GDPR) and Law No. 133/2011 of the Republic of Moldova on the protection of personal data, the data controller within this application is the developer.</p>
+
+  <h2>2. What data the app processes</h2>
+  <p>The app works with three categories of data, <strong>and all of them stay on your device</strong>:</p>
+  <ul>
+    <li><strong>Content of incoming SMS</strong> — analyzed locally to detect one-time codes and correlate them with an active call. Not transmitted outside the device.</li>
+    <li><strong>Phone call status</strong> — the app knows if there's an active call right now and what number called last. This data is used only at runtime and is not saved.</li>
+    <li><strong>Detection history</strong> — list of cases when the app showed a warning. Stored only in device memory, can be cleared in Settings.</li>
+  </ul>
+
+  <h2>3. What is sent to the server</h2>
+  <p>The app makes <strong>one</strong> outbound network request:</p>
+  <ul>
+    <li><strong>Anonymous confirmation of terms acceptance.</strong> On first launch, when you accept this Policy and the Terms of Use, an anonymous record is sent to the server: terms version, acceptance date, and SHA-256 hash of the Android system identifier of the device. From this hash, it is impossible to recover your name, number, email, or any other personal information — it's just a 64-character string.</li>
+  </ul>
+  <p>This record is stored on Cloudflare servers (KV Storage) and used exclusively as legal proof of obtaining consent. Storage period — indefinite, as deletion would remove the evidentiary basis. This corresponds to the exception under Article 17(3)(e) of GDPR.</p>
+  <p>Additionally, the app periodically (once a day) requests an update of the organizations database (banks, telecoms, state institutions of Moldova) from the same server. This request is anonymous.</p>
+
+  <h2>4. What the app does NOT do</h2>
+  <ul>
+    <li>Does not transmit SMS content anywhere</li>
+    <li>Does not store data in the cloud</li>
+    <li>Does not use analytics (Google Analytics, Firebase Analytics, etc.)</li>
+    <li>Does not show ads</li>
+    <li>Does not transfer data to third parties</li>
+    <li>Does not use cookies or other tracking technologies</li>
+    <li>Does not request access to your contacts list, photos, files, GPS location</li>
+  </ul>
+
+  <h2>5. Third-party services</h2>
+  <p>The app uses Cloudflare Workers and Cloudflare KV to store anonymous confirmations of terms acceptance. Cloudflare processes data within the EU. Their privacy policy is available at <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>.</p>
+  <p>The app is distributed via GitHub Releases and (planned) Google Play. When downloading, GitHub or Google privacy policies apply.</p>
+
+  <h2>6. Your rights</h2>
+  <p>Under GDPR and Law No. 133/2011, you have the following rights:</p>
+  <ul>
+    <li><strong>Right to know what data about you is processed</strong> — this document answers this question exhaustively</li>
+    <li><strong>Right to erasure</strong> — all local data on your device can be deleted by clearing the app's data in Android system settings. The anonymous hash on the server does not personally identify you and is kept as legal proof (exception under Art. 17(3)(e) GDPR)</li>
+    <li><strong>Right to object</strong> — you can stop using the app at any time, simply by uninstalling it</li>
+    <li><strong>Right to lodge a complaint</strong> — to the National Center for Personal Data Protection of Moldova (datepersonale.md) or to the supervisory authority of your country of residence</li>
+  </ul>
+
+  <h2>7. Children</h2>
+  <p>The app is intended for persons over 16 years of age. By accepting the Terms of Use, you confirm that you are at least 16 years old.</p>
+
+  <h2>8. Security</h2>
+  <p>Since the main data is stored locally on your device, security primarily depends on how well the device itself is protected (PIN code, encryption). For the server side, we use standard Cloudflare protection measures.</p>
+
+  <h2>9. Policy changes</h2>
+  <p>If this policy changes significantly, the app will display a notification and ask you to re-accept the terms. Minor corrections are published on this page with the date update at the beginning of the document.</p>
+
+  <h2>10. Contact</h2>
+  <p>For any questions related to the protection of your data:<br>
+  Email: <a href="mailto:scamguardrm@gmail.com">scamguardrm@gmail.com</a></p>
+
+  <p style="margin-top: 40px;"><a href="index.html">← Back to main page</a></p>
+</div>
+
+</body>
+</html>
