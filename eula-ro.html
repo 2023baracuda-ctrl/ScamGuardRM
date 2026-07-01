@@ -15,13 +15,43 @@
       <img src="img/icon-full.png" alt="ScamGuard">
       <span>ScamGuard</span>
     </a>
-    <div class="lang-switch">
-      <a href="eula-ru.html">RU</a>
-      <a href="eula-ro.html" class="active">RO</a>
-      <a href="eula-en.html">EN</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#how-it-works">Cum funcționează</a>
+      <a href="index.html#features">Funcționalități</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#docs">Documente</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-toggle" id="langToggle" aria-label="Language">
+          <span class="flag">🇷🇴</span>
+          <span>RO</span>
+          <span class="arrow">▾</span>
+        </button>
+        <div class="lang-menu">
+          <a href="eula-ru.html"><span class="flag">🇷🇺</span> Русский</a>
+          <a href="eula-ro.html" class="active"><span class="flag">🇷🇴</span> Română</a>
+          <a href="eula-en.html"><span class="flag">🇬🇧</span> English</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
+
+<script>
+document.getElementById('langToggle').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('langDropdown').classList.toggle('open');
+});
+document.addEventListener('click', () => document.getElementById('langDropdown').classList.remove('open'));
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
 
 <div class="doc-page">
   <h1>Acordul utilizatorului (EULA)</h1>
@@ -39,7 +69,7 @@
     <li>Modifica, decompila sau supune la inginerie inversă părți ale aplicației, încălcând drepturile de proprietate intelectuală</li>
     <li>Utiliza aplicația în scopuri ilegale</li>
   </ul>
-  <p>Utilizarea aplicației pentru protecție personală, ajutorul rudelor și răspândirea cunoștințelor despre funcționarea sa — este binevenită.</p>
+  <p>Utilizarea aplicației pentru uz personal, ajutorul rudelor și răspândirea cunoștințelor despre funcționarea sa — este binevenită.</p>
 
   <h2>3. Restricții de vârstă</h2>
   <p>Aplicația este destinată persoanelor care au împlinit 16 ani. Acceptând acest acord, confirmați că aveți cel puțin 16 ani sau că instalați aplicația cu consimțământul reprezentantului legal.</p>
@@ -56,7 +86,7 @@
 
   <h2>5. Excluderea garanțiilor</h2>
   <p>Aplicația este furnizată „așa cum este" (as is) fără orice garanții, explicite sau implicite, inclusiv (dar nu limitându-se) garanții de adecvare pentru un scop specific, conformitate cu descrierea, funcționare fără erori sau continuitate a serviciilor.</p>
-  <p>Dezvoltatorul nu garantează că aplicația vă va proteja complet împotriva tuturor tipurilor de fraudă telefonică. Utilizarea aplicației nu vă scutește de necesitatea de a respecta regulile generale de securitate digitală.</p>
+  <p>Dezvoltatorul nu garantează că aplicația va detecta toate tipurile de fraudă telefonică și vă va feri de ele. Utilizarea aplicației nu vă scutește de necesitatea de a respecta regulile generale de securitate digitală.</p>
 
   <h2>6. Limitarea răspunderii</h2>
   <p>În măsura maximă permisă de legea aplicabilă, dezvoltatorul nu este responsabil pentru orice prejudicii directe, indirecte, accidentale sau ulterioare apărute din utilizarea sau imposibilitatea utilizării aplicației, inclusiv (dar nelimitându-se) pierderi financiare ca urmare a acțiunilor terților.</p>

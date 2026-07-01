@@ -15,13 +15,43 @@
       <img src="img/icon-full.png" alt="ScamGuard">
       <span>ScamGuard</span>
     </a>
-    <div class="lang-switch">
-      <a href="eula-ru.html">RU</a>
-      <a href="eula-ro.html">RO</a>
-      <a href="eula-en.html" class="active">EN</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#docs">Documents</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-toggle" id="langToggle" aria-label="Language">
+          <span class="flag">🇬🇧</span>
+          <span>EN</span>
+          <span class="arrow">▾</span>
+        </button>
+        <div class="lang-menu">
+          <a href="eula-ru.html"><span class="flag">🇷🇺</span> Русский</a>
+          <a href="eula-ro.html"><span class="flag">🇷🇴</span> Română</a>
+          <a href="eula-en.html" class="active"><span class="flag">🇬🇧</span> English</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
+
+<script>
+document.getElementById('langToggle').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('langDropdown').classList.toggle('open');
+});
+document.addEventListener('click', () => document.getElementById('langDropdown').classList.remove('open'));
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
 
 <div class="doc-page">
   <h1>Terms of Use (EULA)</h1>
@@ -39,7 +69,7 @@
     <li>Modify, decompile, or reverse-engineer parts of the application in violation of intellectual property rights</li>
     <li>Use the application for illegal purposes</li>
   </ul>
-  <p>Using the application for personal protection, helping relatives, and spreading knowledge about its operation is welcomed.</p>
+  <p>Using the application for personal use, helping relatives, and spreading knowledge about its operation is welcomed.</p>
 
   <h2>3. Age restrictions</h2>
   <p>The application is intended for persons who have reached the age of 16. By accepting this agreement, you confirm that you are at least 16 years old or that you are installing the application with the consent of a legal representative.</p>
@@ -56,7 +86,7 @@
 
   <h2>5. Disclaimer of warranties</h2>
   <p>The application is provided "as is" without any warranties, express or implied, including (but not limited to) warranties of fitness for a particular purpose, conformity to description, error-free operation, or continuity of service.</p>
-  <p>The developer does not guarantee that the application will completely protect you from all types of phone fraud. Using the application does not relieve you of the need to follow general digital security rules.</p>
+  <p>The developer does not guarantee that the application will detect all types of phone fraud and keep you safe from them. Using the application does not relieve you of the need to follow general digital security rules.</p>
 
   <h2>6. Limitation of liability</h2>
   <p>To the maximum extent permitted by applicable law, the developer is not responsible for any direct, indirect, incidental, or consequential damages arising from the use or inability to use the application, including (but not limited to) financial losses as a result of the actions of third parties.</p>

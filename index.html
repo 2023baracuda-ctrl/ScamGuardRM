@@ -3,34 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="meta_title">ScamGuard — защита от телефонных мошенников в Молдове</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta_description" content="Бесплатное Android-приложение, предупреждающее о мошенниках при подозрительных звонках. Работает локально, без передачи данных.">
+<title data-i18n="meta_title">ScamGuard — предупреждение о телефонных мошенниках в Молдове</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_description" content="Бесплатное Android-приложение, которое обнаруживает признаки телефонного мошенничества и предупреждает вас. Работает локально, без передачи данных.">
 <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ============ Header ============ -->
 <header class="site-header">
   <div class="container">
     <a href="#" class="brand">
       <img src="img/icon-full.png" alt="ScamGuard">
       <span>ScamGuard</span>
     </a>
-    <div class="lang-switch">
-      <a href="#" data-lang="ru" class="active">RU</a>
-      <a href="#" data-lang="ro">RO</a>
-      <a href="#" data-lang="en">EN</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#how-it-works" data-i18n="nav_how">Как работает</a>
+      <a href="#features" data-i18n="nav_features">Возможности</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#docs" data-i18n="nav_docs">Документы</a>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-toggle" id="langToggle" aria-label="Language">
+          <span class="flag" id="currentFlag">🇷🇺</span>
+          <span id="currentLang">RU</span>
+          <span class="arrow">▾</span>
+        </button>
+        <div class="lang-menu">
+          <a href="#" data-lang="ru" class="active"><span class="flag">🇷🇺</span> Русский</a>
+          <a href="#" data-lang="ro"><span class="flag">🇷🇴</span> Română</a>
+          <a href="#" data-lang="en"><span class="flag">🇬🇧</span> English</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
 
-<!-- ============ Hero ============ -->
 <section class="hero">
   <div class="container">
     <img src="img/icon-full.png" class="hero-icon" alt="ScamGuard">
-    <h1 data-i18n="hero_title">Защита от телефонных мошенников</h1>
-    <p class="subtitle" data-i18n="hero_subtitle">Бесплатное Android-приложение для жителей Молдовы. Предупреждает, когда мошенник звонит и просит назвать код из SMS.</p>
+    <h1 data-i18n="hero_title">Предупреждение о телефонных мошенниках</h1>
+    <p class="subtitle" data-i18n="hero_subtitle">Бесплатное Android-приложение для жителей Молдовы. Обнаруживает признаки мошенничества и предупреждает вас, когда мошенник звонит и просит назвать код из SMS.</p>
     <div class="cta-row">
       <a href="https://github.com/2023baracuda-ctrl/ScamGuard/releases" class="btn btn-primary">
         <span>⬇</span>
@@ -46,11 +64,10 @@
   </div>
 </section>
 
-<!-- ============ How it works ============ -->
 <section id="how-it-works" class="alt">
   <div class="container">
     <h2 class="section-title" data-i18n="how_title">Как это работает</h2>
-    <p class="section-subtitle" data-i18n="how_subtitle">Три шага — и защита работает в фоне круглосуточно</p>
+    <p class="section-subtitle" data-i18n="how_subtitle">Три шага — и приложение работает в фоне круглосуточно</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -64,15 +81,14 @@
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3 data-i18n="step3_title">Защита работает</h3>
+        <h3 data-i18n="step3_title">Приложение работает</h3>
         <p data-i18n="step3_desc">ScamGuard работает в фоне. Если придёт код во время подозрительного звонка — увидите предупреждение.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ Features ============ -->
-<section>
+<section id="features">
   <div class="container">
     <h2 class="section-title" data-i18n="features_title">Возможности</h2>
     <p class="section-subtitle" data-i18n="features_subtitle">Простой и понятный набор функций без лишнего</p>
@@ -111,7 +127,6 @@
   </div>
 </section>
 
-<!-- ============ Privacy block ============ -->
 <section class="alt">
   <div class="container">
     <div class="privacy-block">
@@ -138,7 +153,6 @@
   </div>
 </section>
 
-<!-- ============ Screenshots ============ -->
 <section>
   <div class="container">
     <h2 class="section-title" data-i18n="screens_title">Как это выглядит</h2>
@@ -147,7 +161,7 @@
       <div class="screen-card">
         <img src="img/screenshot-home.jpg" alt="Главный экран">
         <h3 data-i18n="screen1_title">Главный экран</h3>
-        <p data-i18n="screen1_desc">Видно что защита работает. Подсказки безопасности всегда на виду.</p>
+        <p data-i18n="screen1_desc">Видно что приложение работает. Подсказки безопасности всегда на виду.</p>
       </div>
       <div class="screen-card">
         <img src="img/screenshot-alert.jpg" alt="Предупреждение о мошенниках">
@@ -158,8 +172,7 @@
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section class="alt">
+<section id="faq" class="alt">
   <div class="container">
     <h2 class="section-title" data-i18n="faq_title">Частые вопросы</h2>
     <div class="faq">
@@ -172,18 +185,36 @@
         <p data-i18n="faq_a2">Нет. Предупреждение срабатывает только если код пришёл в момент активного звонка или в течение 5 минут после звонка. В обычной ситуации (вы получаете код для входа в почту, например) приложение молчит.</p>
       </details>
       <details class="faq-item">
-        <summary data-i18n="faq_q3">Можно ли остановить защиту?</summary>
-        <p data-i18n="faq_a3">Да. В разделе «Настройки» есть кнопка «Остановить ScamGuard». Защита приостанавливается до тех пор пока вы её не запустите снова. Никакие данные не удаляются.</p>
+        <summary data-i18n="faq_q3">Можно ли остановить приложение?</summary>
+        <p data-i18n="faq_a3">Да. В разделе «Настройки» есть кнопка «Остановить ScamGuard». Приложение приостанавливается до тех пор пока вы её не запустите снова. Никакие данные не удаляются.</p>
       </details>
       <details class="faq-item">
         <summary data-i18n="faq_q4">Сколько стоит приложение?</summary>
-        <p data-i18n="faq_a4">Полностью бесплатно. Без рекламы. Без покупок внутри. Без подписки. Личный проект для защиты семьи и соседей.</p>
+        <p data-i18n="faq_a4">Полностью бесплатно. Без рекламы. Без покупок внутри. Без подписки. Личный проект для помощи семье и соседям.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ============ Footer ============ -->
+<section id="docs">
+  <div class="container">
+    <h2 class="section-title" data-i18n="docs_title">Документы</h2>
+    <p class="section-subtitle" data-i18n="docs_subtitle">Юридическая информация и условия использования приложения</p>
+    <div class="features" style="max-width: 780px; margin: 0 auto;">
+      <a href="privacy-ru.html" class="feature" style="text-decoration: none;" id="docPrivacyLink">
+        <span class="feature-icon">🔒</span>
+        <h3 data-i18n="docs_privacy_title">Политика конфиденциальности</h3>
+        <p data-i18n="docs_privacy_desc">Какие данные обрабатываются, где хранятся и что отправляется на сервер.</p>
+      </a>
+      <a href="eula-ru.html" class="feature" style="text-decoration: none;" id="docEulaLink">
+        <span class="feature-icon">📄</span>
+        <h3 data-i18n="docs_eula_title">Пользовательское соглашение</h3>
+        <p data-i18n="docs_eula_desc">Условия установки и использования приложения, ограничения ответственности.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -192,12 +223,12 @@
           <img src="img/icon-full.png" alt="">
           <span>ScamGuard</span>
         </a>
-        <p data-i18n="footer_about">Бесплатная защита от телефонных мошенников. Работает локально на вашем устройстве.</p>
+        <p data-i18n="footer_about">Бесплатное приложение для обнаружения телефонных мошенников. Работает локально на вашем устройстве.</p>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer_docs">Документы</h4>
-        <a href="privacy-ru.html" data-i18n="footer_privacy">Политика конфиденциальности</a>
-        <a href="eula-ru.html" data-i18n="footer_eula">Пользовательское соглашение</a>
+        <a href="privacy-ru.html" data-i18n="footer_privacy" id="footerPrivacyLink">Политика конфиденциальности</a>
+        <a href="eula-ru.html" data-i18n="footer_eula" id="footerEulaLink">Пользовательское соглашение</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer_contact">Связь</h4>
@@ -212,24 +243,25 @@
 </footer>
 
 <script>
+const flags = { ru: '🇷🇺', ro: '🇷🇴', en: '🇬🇧' };
+const labels = { ru: 'RU', ro: 'RO', en: 'EN' };
+
 const i18n = {
   ru: {
-    meta_title: "ScamGuard — защита от телефонных мошенников в Молдове",
-    meta_description: "Бесплатное Android-приложение, предупреждающее о мошенниках при подозрительных звонках. Работает локально, без передачи данных.",
-    hero_title: "Защита от телефонных мошенников",
-    hero_subtitle: "Бесплатное Android-приложение для жителей Молдовы. Предупреждает, когда мошенник звонит и просит назвать код из SMS.",
-    cta_download: "Скачать APK",
-    cta_learn: "Как это работает",
-    badge_free: "✓ Бесплатно",
-    badge_local: "✓ Локально на устройстве",
-    badge_no_ads: "✓ Без рекламы",
+    meta_title: "ScamGuard — предупреждение о телефонных мошенниках в Молдове",
+    meta_description: "Бесплатное Android-приложение, которое обнаруживает признаки телефонного мошенничества и предупреждает вас. Работает локально, без передачи данных.",
+    nav_how: "Как работает", nav_features: "Возможности", nav_faq: "FAQ", nav_docs: "Документы",
+    hero_title: "Предупреждение о телефонных мошенниках",
+    hero_subtitle: "Бесплатное Android-приложение для жителей Молдовы. Обнаруживает признаки мошенничества и предупреждает вас, когда мошенник звонит и просит назвать код из SMS.",
+    cta_download: "Скачать APK", cta_learn: "Как это работает",
+    badge_free: "✓ Бесплатно", badge_local: "✓ Локально на устройстве", badge_no_ads: "✓ Без рекламы",
     how_title: "Как это работает",
-    how_subtitle: "Три шага — и защита работает в фоне круглосуточно",
+    how_subtitle: "Три шага — и приложение работает в фоне круглосуточно",
     step1_title: "Установите приложение",
     step1_desc: "Скачайте APK и установите. Бесплатно, без регистрации, без рекламы.",
     step2_title: "Дайте разрешения",
     step2_desc: "Один раз настройте — приложение запросит нужные разрешения и покажет как их выдать.",
-    step3_title: "Защита работает",
+    step3_title: "Приложение работает",
     step3_desc: "ScamGuard работает в фоне. Если придёт код во время подозрительного звонка — увидите предупреждение.",
     features_title: "Возможности",
     features_subtitle: "Простой и понятный набор функций без лишнего",
@@ -256,7 +288,7 @@ const i18n = {
     screens_title: "Как это выглядит",
     screens_subtitle: "Простой интерфейс — даже для тех кто не дружит с техникой",
     screen1_title: "Главный экран",
-    screen1_desc: "Видно что защита работает. Подсказки безопасности всегда на виду.",
+    screen1_desc: "Видно что приложение работает. Подсказки безопасности всегда на виду.",
     screen2_title: "Предупреждение",
     screen2_desc: "Громкое визуальное предупреждение в момент опасности. Одна кнопка — и звонок завершён.",
     faq_title: "Частые вопросы",
@@ -264,34 +296,35 @@ const i18n = {
     faq_a1: "Каждое разрешение нужно для конкретной функции. Приём SMS — чтобы анализировать входящие коды. Статус телефона — чтобы понимать когда идёт звонок. Управление звонками — чтобы кнопка «Положить трубку» действительно завершала звонок. Поверх окон — чтобы предупреждение всплывало над экраном звонка.",
     faq_q2: "Будут ли обычные SMS-коды (Gmail, банк при логине) показывать предупреждение?",
     faq_a2: "Нет. Предупреждение срабатывает только если код пришёл в момент активного звонка или в течение 5 минут после звонка. В обычной ситуации (вы получаете код для входа в почту, например) приложение молчит.",
-    faq_q3: "Можно ли остановить защиту?",
-    faq_a3: "Да. В разделе «Настройки» есть кнопка «Остановить ScamGuard». Защита приостанавливается до тех пор пока вы её не запустите снова. Никакие данные не удаляются.",
+    faq_q3: "Можно ли остановить приложение?",
+    faq_a3: "Да. В разделе «Настройки» есть кнопка «Остановить ScamGuard». Приложение приостанавливается до тех пор пока вы её не запустите снова. Никакие данные не удаляются.",
     faq_q4: "Сколько стоит приложение?",
-    faq_a4: "Полностью бесплатно. Без рекламы. Без покупок внутри. Без подписки. Личный проект для защиты семьи и соседей.",
-    footer_about: "Бесплатная защита от телефонных мошенников. Работает локально на вашем устройстве.",
-    footer_docs: "Документы",
-    footer_privacy: "Политика конфиденциальности",
-    footer_eula: "Пользовательское соглашение",
-    footer_contact: "Связь",
-    footer_madein: "Сделано в Молдове."
+    faq_a4: "Полностью бесплатно. Без рекламы. Без покупок внутри. Без подписки. Личный проект для помощи семье и соседям.",
+    docs_title: "Документы",
+    docs_subtitle: "Юридическая информация и условия использования приложения",
+    docs_privacy_title: "Политика конфиденциальности",
+    docs_privacy_desc: "Какие данные обрабатываются, где хранятся и что отправляется на сервер.",
+    docs_eula_title: "Пользовательское соглашение",
+    docs_eula_desc: "Условия установки и использования приложения, ограничения ответственности.",
+    footer_about: "Бесплатное приложение для обнаружения телефонных мошенников. Работает локально на вашем устройстве.",
+    footer_docs: "Документы", footer_privacy: "Политика конфиденциальности", footer_eula: "Пользовательское соглашение",
+    footer_contact: "Связь", footer_madein: "Сделано в Молдове."
   },
   ro: {
-    meta_title: "ScamGuard — protecție împotriva escrocilor telefonici din Moldova",
-    meta_description: "Aplicație Android gratuită care avertizează despre escroci la apeluri suspecte. Funcționează local, fără transmiterea datelor.",
-    hero_title: "Protecție împotriva escrocilor telefonici",
-    hero_subtitle: "Aplicație Android gratuită pentru locuitorii Moldovei. Te avertizează când un escroc te sună și cere să comunici un cod din SMS.",
-    cta_download: "Descarcă APK",
-    cta_learn: "Cum funcționează",
-    badge_free: "✓ Gratuit",
-    badge_local: "✓ Local pe dispozitiv",
-    badge_no_ads: "✓ Fără reclame",
+    meta_title: "ScamGuard — avertizare despre escroci telefonici din Moldova",
+    meta_description: "Aplicație Android gratuită care detectează semne de fraudă telefonică și te avertizează. Funcționează local, fără transmiterea datelor.",
+    nav_how: "Cum funcționează", nav_features: "Funcționalități", nav_faq: "FAQ", nav_docs: "Documente",
+    hero_title: "Avertizare despre escroci telefonici",
+    hero_subtitle: "Aplicație Android gratuită pentru locuitorii Moldovei. Detectează semne de fraudă și te avertizează când un escroc te sună și cere să comunici un cod din SMS.",
+    cta_download: "Descarcă APK", cta_learn: "Cum funcționează",
+    badge_free: "✓ Gratuit", badge_local: "✓ Local pe dispozitiv", badge_no_ads: "✓ Fără reclame",
     how_title: "Cum funcționează",
-    how_subtitle: "Trei pași — și protecția funcționează în fundal non-stop",
+    how_subtitle: "Trei pași — și aplicația funcționează în fundal non-stop",
     step1_title: "Instalează aplicația",
     step1_desc: "Descarcă APK și instalează. Gratuit, fără înregistrare, fără reclame.",
     step2_title: "Acordă permisiunile",
     step2_desc: "Configurezi o singură dată — aplicația va cere permisiunile necesare și îți va arăta cum să le acorzi.",
-    step3_title: "Protecția funcționează",
+    step3_title: "Aplicația funcționează",
     step3_desc: "ScamGuard rulează în fundal. Dacă vine un cod în timpul unui apel suspect — vei vedea avertismentul.",
     features_title: "Funcționalități",
     features_subtitle: "Set simplu și clar de funcții, fără extra",
@@ -318,7 +351,7 @@ const i18n = {
     screens_title: "Cum arată",
     screens_subtitle: "Interfață simplă — chiar și pentru cei mai puțin obișnuiți cu tehnologia",
     screen1_title: "Ecranul principal",
-    screen1_desc: "Se vede că protecția funcționează. Sfaturile de siguranță sunt mereu la vedere.",
+    screen1_desc: "Se vede că aplicația funcționează. Sfaturile de siguranță sunt mereu la vedere.",
     screen2_title: "Avertismentul",
     screen2_desc: "Avertisment vizual puternic în momentul pericolului. Un buton — și apelul este închis.",
     faq_title: "Întrebări frecvente",
@@ -326,34 +359,35 @@ const i18n = {
     faq_a1: "Fiecare permisiune e necesară pentru o funcție concretă. Recepția SMS — pentru analiza codurilor primite. Statusul telefonului — pentru a ști când e un apel activ. Gestionarea apelurilor — pentru ca butonul «Închide apelul» să funcționeze real. Peste ferestre — pentru ca avertismentul să apară peste ecranul apelului.",
     faq_q2: "Codurile SMS obișnuite (Gmail, bancă la autentificare) vor declanșa avertismente?",
     faq_a2: "Nu. Avertismentul se declanșează doar dacă codul a venit în timpul unui apel activ sau în primele 5 minute după apel. În situații obișnuite (de exemplu, primești un cod pentru email) aplicația tace.",
-    faq_q3: "Pot opri protecția?",
-    faq_a3: "Da. În secțiunea «Setări» există butonul «Oprește ScamGuard». Protecția se suspendă până când o pornești din nou. Nicio dată nu se șterge.",
+    faq_q3: "Pot opri aplicația?",
+    faq_a3: "Da. În secțiunea «Setări» există butonul «Oprește ScamGuard». Aplicația se suspendă până când o pornești din nou. Nicio dată nu se șterge.",
     faq_q4: "Cât costă aplicația?",
-    faq_a4: "Complet gratuit. Fără reclame. Fără cumpărături în aplicație. Fără abonament. Un proiect personal pentru protejarea familiei și vecinilor.",
-    footer_about: "Protecție gratuită împotriva escrocilor telefonici. Funcționează local pe dispozitivul tău.",
-    footer_docs: "Documente",
-    footer_privacy: "Politica de confidențialitate",
-    footer_eula: "Acordul utilizatorului",
-    footer_contact: "Contact",
-    footer_madein: "Făcut în Moldova."
+    faq_a4: "Complet gratuit. Fără reclame. Fără cumpărături în aplicație. Fără abonament. Un proiect personal pentru ajutorul familiei și vecinilor.",
+    docs_title: "Documente",
+    docs_subtitle: "Informații juridice și condițiile de utilizare a aplicației",
+    docs_privacy_title: "Politica de confidențialitate",
+    docs_privacy_desc: "Ce date se prelucrează, unde se păstrează și ce se trimite pe server.",
+    docs_eula_title: "Acordul utilizatorului",
+    docs_eula_desc: "Condițiile de instalare și utilizare a aplicației, limitele răspunderii.",
+    footer_about: "Aplicație gratuită pentru detectarea escrocilor telefonici. Funcționează local pe dispozitivul tău.",
+    footer_docs: "Documente", footer_privacy: "Politica de confidențialitate", footer_eula: "Acordul utilizatorului",
+    footer_contact: "Contact", footer_madein: "Făcut în Moldova."
   },
   en: {
-    meta_title: "ScamGuard — protection from phone scammers in Moldova",
-    meta_description: "Free Android app that warns about scammers during suspicious calls. Works locally, no data transmission.",
-    hero_title: "Protection from phone scammers",
-    hero_subtitle: "Free Android app for Moldova residents. Alerts you when a scammer calls and asks for an SMS code.",
-    cta_download: "Download APK",
-    cta_learn: "How it works",
-    badge_free: "✓ Free",
-    badge_local: "✓ Local on device",
-    badge_no_ads: "✓ No ads",
+    meta_title: "ScamGuard — alerts about phone scammers in Moldova",
+    meta_description: "Free Android app that detects signs of phone fraud and warns you. Works locally, no data transmission.",
+    nav_how: "How it works", nav_features: "Features", nav_faq: "FAQ", nav_docs: "Documents",
+    hero_title: "Alerts about phone scammers",
+    hero_subtitle: "Free Android app for Moldova residents. Detects fraud signals and warns you when a scammer calls and asks for an SMS code.",
+    cta_download: "Download APK", cta_learn: "How it works",
+    badge_free: "✓ Free", badge_local: "✓ Local on device", badge_no_ads: "✓ No ads",
     how_title: "How it works",
-    how_subtitle: "Three steps — and protection runs in background 24/7",
+    how_subtitle: "Three steps — and the app runs in background 24/7",
     step1_title: "Install the app",
     step1_desc: "Download the APK and install. Free, no registration, no ads.",
     step2_title: "Grant permissions",
     step2_desc: "One-time setup — the app will request necessary permissions and show you how to grant them.",
-    step3_title: "Protection works",
+    step3_title: "The app works",
     step3_desc: "ScamGuard runs in background. If you receive a code during a suspicious call — you'll see a warning.",
     features_title: "Features",
     features_subtitle: "Simple and clear feature set without extras",
@@ -380,7 +414,7 @@ const i18n = {
     screens_title: "What it looks like",
     screens_subtitle: "Simple interface — even for those uncomfortable with tech",
     screen1_title: "Main screen",
-    screen1_desc: "You can see that protection is working. Safety tips are always visible.",
+    screen1_desc: "You can see that the app is working. Safety tips are always visible.",
     screen2_title: "Alert",
     screen2_desc: "Loud visual warning at the moment of danger. One button — and the call is ended.",
     faq_title: "Frequently asked questions",
@@ -388,16 +422,19 @@ const i18n = {
     faq_a1: "Each permission is needed for a specific function. SMS reception — to analyze incoming codes. Phone state — to know when a call is active. Call management — so the «Hang up» button actually ends the call. Display over apps — so the warning appears over the call screen.",
     faq_q2: "Will regular SMS codes (Gmail, bank login) trigger warnings?",
     faq_a2: "No. The warning triggers only if the code arrived during an active call or within 5 minutes after the call. In normal situations (you get a code for email login, for example) the app stays silent.",
-    faq_q3: "Can I stop the protection?",
-    faq_a3: "Yes. In the «Settings» section there is a «Stop ScamGuard» button. Protection is paused until you start it again. No data is deleted.",
+    faq_q3: "Can I stop the app?",
+    faq_a3: "Yes. In the «Settings» section there is a «Stop ScamGuard» button. The app is paused until you start it again. No data is deleted.",
     faq_q4: "How much does the app cost?",
-    faq_a4: "Completely free. No ads. No in-app purchases. No subscription. A personal project to protect family and neighbors.",
-    footer_about: "Free protection from phone scammers. Works locally on your device.",
-    footer_docs: "Documents",
-    footer_privacy: "Privacy Policy",
-    footer_eula: "Terms of Use",
-    footer_contact: "Contact",
-    footer_madein: "Made in Moldova."
+    faq_a4: "Completely free. No ads. No in-app purchases. No subscription. A personal project to help family and neighbors.",
+    docs_title: "Documents",
+    docs_subtitle: "Legal information and terms of use",
+    docs_privacy_title: "Privacy Policy",
+    docs_privacy_desc: "What data is processed, where it's stored and what is sent to the server.",
+    docs_eula_title: "Terms of Use",
+    docs_eula_desc: "Conditions for installing and using the app, limitations of liability.",
+    footer_about: "Free app for detecting phone scammers. Works locally on your device.",
+    footer_docs: "Documents", footer_privacy: "Privacy Policy", footer_eula: "Terms of Use",
+    footer_contact: "Contact", footer_madein: "Made in Moldova."
   }
 };
 
@@ -411,22 +448,43 @@ function applyLang(lang) {
     if (attr) el.setAttribute(attr, i18n[lang][key]);
     else el.textContent = i18n[lang][key];
   });
-  document.querySelectorAll('.lang-switch a').forEach(a => {
+  document.querySelectorAll('.lang-menu a').forEach(a => {
     a.classList.toggle('active', a.dataset.lang === lang);
   });
-  // Update doc links to point to localized versions
-  const privacyLink = document.querySelector('[data-i18n="footer_privacy"]');
-  const eulaLink = document.querySelector('[data-i18n="footer_eula"]');
-  if (privacyLink) privacyLink.href = `privacy-${lang}.html`;
-  if (eulaLink) eulaLink.href = `eula-${lang}.html`;
+  document.getElementById('currentFlag').textContent = flags[lang];
+  document.getElementById('currentLang').textContent = labels[lang];
+  document.getElementById('footerPrivacyLink').href = `privacy-${lang}.html`;
+  document.getElementById('footerEulaLink').href = `eula-${lang}.html`;
+  document.getElementById('docPrivacyLink').href = `privacy-${lang}.html`;
+  document.getElementById('docEulaLink').href = `eula-${lang}.html`;
   localStorage.setItem('sg_lang', lang);
   history.replaceState(null, '', '#' + lang);
 }
 
-document.querySelectorAll('.lang-switch a').forEach(a => {
+const langDropdown = document.getElementById('langDropdown');
+document.getElementById('langToggle').addEventListener('click', (e) => {
+  e.stopPropagation();
+  langDropdown.classList.toggle('open');
+});
+document.addEventListener('click', () => langDropdown.classList.remove('open'));
+document.querySelectorAll('.lang-menu a').forEach(a => {
   a.addEventListener('click', (e) => {
     e.preventDefault();
+    langDropdown.classList.remove('open');
     applyLang(a.dataset.lang);
+  });
+});
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
   });
 });
 

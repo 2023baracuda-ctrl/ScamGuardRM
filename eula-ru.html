@@ -15,13 +15,43 @@
       <img src="img/icon-full.png" alt="ScamGuard">
       <span>ScamGuard</span>
     </a>
-    <div class="lang-switch">
-      <a href="eula-ru.html" class="active">RU</a>
-      <a href="eula-ro.html">RO</a>
-      <a href="eula-en.html">EN</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#how-it-works">Как работает</a>
+      <a href="index.html#features">Возможности</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#docs">Документы</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-toggle" id="langToggle" aria-label="Language">
+          <span class="flag">🇷🇺</span>
+          <span>RU</span>
+          <span class="arrow">▾</span>
+        </button>
+        <div class="lang-menu">
+          <a href="eula-ru.html" class="active"><span class="flag">🇷🇺</span> Русский</a>
+          <a href="eula-ro.html"><span class="flag">🇷🇴</span> Română</a>
+          <a href="eula-en.html"><span class="flag">🇬🇧</span> English</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
+
+<script>
+document.getElementById('langToggle').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('langDropdown').classList.toggle('open');
+});
+document.addEventListener('click', () => document.getElementById('langDropdown').classList.remove('open'));
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
 
 <div class="doc-page">
   <h1>Пользовательское соглашение (EULA)</h1>
@@ -39,7 +69,7 @@
     <li>Модифицировать, декомпилировать или подвергать обратной разработке части приложения, нарушая права интеллектуальной собственности</li>
     <li>Использовать приложение для незаконных целей</li>
   </ul>
-  <p>Использование приложения для личной защиты, помощи родственникам и распространение знаний о его работе — приветствуется.</p>
+  <p>Использование приложения для личного использования, помощи родственникам и распространение знаний о его работе — приветствуется.</p>
 
   <h2>3. Возрастные ограничения</h2>
   <p>Приложение предназначено для лиц, достигших 16 лет. Принимая это соглашение, вы подтверждаете что вам исполнилось 16 лет либо вы устанавливаете приложение с согласия законного представителя.</p>
@@ -56,7 +86,7 @@
 
   <h2>5. Отказ от гарантий</h2>
   <p>Приложение предоставляется «как есть» (as is) без каких-либо гарантий, явных или подразумеваемых, включая (но не ограничиваясь) гарантии пригодности для конкретной цели, соответствия описанию, безошибочности работы или непрерывности предоставления услуг.</p>
-  <p>Разработчик не гарантирует что приложение полностью защитит вас от всех видов телефонного мошенничества. Использование приложения не освобождает вас от необходимости соблюдать общие правила цифровой безопасности.</p>
+  <p>Разработчик не гарантирует что приложение обнаружит все виды телефонного мошенничества и убережёт вас от них. Использование приложения не освобождает вас от необходимости соблюдать общие правила цифровой безопасности.</p>
 
   <h2>6. Ограничение ответственности</h2>
   <p>В максимально допустимой применимым правом степени, разработчик не несёт ответственности за любые прямые, косвенные, случайные или последующие убытки, возникшие из использования или невозможности использования приложения, включая (но не ограничиваясь) финансовые потери в результате действий третьих лиц.</p>
