@@ -242,210 +242,27 @@
 </footer>
 
 <script>
-const flags = { ru: '🇷🇺', ro: '🇷🇴', en: '🇬🇧' };
 const labels = { ru: 'RU', ro: 'RO', en: 'EN' };
+const cache = {};
 
-const i18n = {
-  ru: {
-    meta_title: "ScamGuard — предупреждение о телефонных мошенниках в Молдове",
-    meta_description: "Бесплатное Android-приложение, которое обнаруживает признаки телефонного мошенничества и предупреждает вас. Работает локально, без передачи данных.",
-    nav_how: "Как работает", nav_features: "Возможности", nav_faq: "FAQ", nav_docs: "Документы",
-    hero_title: "Предупреждение о телефонных мошенниках",
-    hero_subtitle: "Бесплатное Android-приложение для жителей Молдовы. Обнаруживает признаки мошенничества и предупреждает вас, когда мошенник звонит и просит назвать код из SMS.",
-    cta_download: "Скачать APK", cta_learn: "Как это работает",
-    badge_free: "✓ Бесплатно", badge_local: "✓ Локально на устройстве", badge_no_ads: "✓ Без рекламы",
-    how_title: "Как это работает",
-    how_subtitle: "Три шага — и приложение работает в фоне круглосуточно",
-    step1_title: "Установите приложение",
-    step1_desc: "Скачайте APK и установите. Бесплатно, без регистрации, без рекламы.",
-    step2_title: "Дайте разрешения",
-    step2_desc: "Один раз настройте — приложение запросит нужные разрешения и покажет как их выдать.",
-    step3_title: "Приложение работает",
-    step3_desc: "ScamGuard работает в фоне. Если придёт код во время подозрительного звонка — увидите предупреждение.",
-    features_title: "Возможности",
-    features_subtitle: "Простой и понятный набор функций без лишнего",
-    f1_title: "Распознавание кодов в SMS",
-    f1_desc: "Приложение видит когда вам приходит одноразовый код подтверждения и связывает это с активным звонком.",
-    f2_title: "Контекст звонка",
-    f2_desc: "Предупреждение срабатывает только если код пришёл во время или сразу после звонка. Обычные SMS-коды не мешают.",
-    f3_title: "База учреждений Молдовы",
-    f3_desc: "Распознаёт SMS от MAIB, Victoriabank, MICB, Orange, Moldcell и других — показывает кто отправил.",
-    f4_title: "Кнопка «Положить трубку»",
-    f4_desc: "Большая красная кнопка в уведомлении сразу завершает звонок мошенника — не нужно искать в меню.",
-    f5_title: "Без интернета",
-    f5_desc: "Вся обработка SMS идёт локально на устройстве. Интернет нужен только для проверки обновлений.",
-    f6_title: "Два языка интерфейса",
-    f6_desc: "Русский и румынский. Переключаются одной кнопкой в настройках.",
-    privacy_title: "Приватность по умолчанию",
-    privacy_subtitle: "Мы понимаем что приложение работающее с SMS требует особого доверия",
-    p1_title: "Всё локально",
-    p1_desc: "Анализ SMS, история, контакты — всё хранится только на вашем устройстве. На сервер ничего не уходит.",
-    p2_title: "SMS не передаются",
-    p2_desc: "Содержимое ваших SMS не покидает телефон. Приложению технически нечего отправить — у нас нет endpoint для приёма SMS.",
-    p3_title: "Только согласие на EULA",
-    p3_desc: "Единственный сетевой запрос — анонимный хэш при первом запуске, подтверждающий что вы приняли условия использования.",
-    screens_title: "Как это выглядит",
-    screens_subtitle: "Простой интерфейс — даже для тех кто не дружит с техникой",
-    screen1_title: "Главный экран",
-    screen1_desc: "Видно что приложение работает. Подсказки безопасности всегда на виду.",
-    screen2_title: "Предупреждение",
-    screen2_desc: "Громкое визуальное предупреждение в момент опасности. Одна кнопка — и звонок завершён.",
-    faq_title: "Частые вопросы",
-    faq_q1: "Зачем приложению столько разрешений?",
-    faq_a1: "Каждое разрешение нужно для конкретной функции. Приём SMS — чтобы анализировать входящие коды. Статус телефона — чтобы понимать когда идёт звонок. Управление звонками — чтобы кнопка «Положить трубку» действительно завершала звонок. Поверх окон — чтобы предупреждение всплывало над экраном звонка.",
-    faq_q2: "Будут ли обычные SMS-коды (Gmail, банк при логине) показывать предупреждение?",
-    faq_a2: "Нет. Предупреждение срабатывает только если код пришёл в момент активного звонка или в течение 5 минут после звонка. В обычной ситуации (вы получаете код для входа в почту, например) приложение молчит.",
-    faq_q3: "Можно ли остановить приложение?",
-    faq_a3: "Да. В разделе «Настройки» есть кнопка «Остановить ScamGuard». Приложение приостанавливается до тех пор пока вы её не запустите снова. Никакие данные не удаляются.",
-    faq_q4: "Сколько стоит приложение?",
-    faq_a4: "Полностью бесплатно. Без рекламы. Без покупок внутри. Без подписки. Личный проект для помощи семье и соседям.",
-    docs_title: "Документы",
-    docs_subtitle: "Юридическая информация и условия использования приложения",
-    docs_privacy_title: "Политика конфиденциальности",
-    docs_privacy_desc: "Какие данные обрабатываются, где хранятся и что отправляется на сервер.",
-    docs_eula_title: "Пользовательское соглашение",
-    docs_eula_desc: "Условия установки и использования приложения, ограничения ответственности.",
-    footer_about: "Бесплатное приложение для обнаружения телефонных мошенников. Работает локально на вашем устройстве.",
-    footer_docs: "Документы", footer_privacy: "Политика конфиденциальности", footer_eula: "Пользовательское соглашение",
-    footer_contact: "Связь", footer_madein: "Сделано в Молдове."
-  },
-  ro: {
-    meta_title: "ScamGuard — avertizare despre escroci telefonici din Moldova",
-    meta_description: "Aplicație Android gratuită care detectează semne de fraudă telefonică și te avertizează. Funcționează local, fără transmiterea datelor.",
-    nav_how: "Cum funcționează", nav_features: "Funcționalități", nav_faq: "FAQ", nav_docs: "Documente",
-    hero_title: "Avertizare despre escroci telefonici",
-    hero_subtitle: "Aplicație Android gratuită pentru locuitorii Moldovei. Detectează semne de fraudă și te avertizează când un escroc te sună și cere să comunici un cod din SMS.",
-    cta_download: "Descarcă APK", cta_learn: "Cum funcționează",
-    badge_free: "✓ Gratuit", badge_local: "✓ Local pe dispozitiv", badge_no_ads: "✓ Fără reclame",
-    how_title: "Cum funcționează",
-    how_subtitle: "Trei pași — și aplicația funcționează în fundal non-stop",
-    step1_title: "Instalează aplicația",
-    step1_desc: "Descarcă APK și instalează. Gratuit, fără înregistrare, fără reclame.",
-    step2_title: "Acordă permisiunile",
-    step2_desc: "Configurezi o singură dată — aplicația va cere permisiunile necesare și îți va arăta cum să le acorzi.",
-    step3_title: "Aplicația funcționează",
-    step3_desc: "ScamGuard rulează în fundal. Dacă vine un cod în timpul unui apel suspect — vei vedea avertismentul.",
-    features_title: "Funcționalități",
-    features_subtitle: "Set simplu și clar de funcții, fără extra",
-    f1_title: "Recunoașterea codurilor în SMS",
-    f1_desc: "Aplicația detectează când primești un cod unic de confirmare și îl asociază cu un apel activ.",
-    f2_title: "Contextul apelului",
-    f2_desc: "Avertismentul apare doar dacă codul a venit în timpul sau imediat după un apel. Codurile SMS obișnuite nu deranjează.",
-    f3_title: "Baza de instituții din Moldova",
-    f3_desc: "Recunoaște SMS de la MAIB, Victoriabank, MICB, Orange, Moldcell și altele — arată cine a trimis.",
-    f4_title: "Butonul «Închide apelul»",
-    f4_desc: "Butonul roșu mare din avertisment închide imediat apelul escrocului — nu trebuie căutat în meniu.",
-    f5_title: "Fără internet",
-    f5_desc: "Toată procesarea SMS-urilor are loc local pe dispozitiv. Internetul e necesar doar pentru verificarea actualizărilor.",
-    f6_title: "Două limbi de interfață",
-    f6_desc: "Rusă și română. Se schimbă cu un singur buton în setări.",
-    privacy_title: "Confidențialitate implicită",
-    privacy_subtitle: "Înțelegem că o aplicație care lucrează cu SMS-uri necesită o încredere specială",
-    p1_title: "Totul local",
-    p1_desc: "Analiza SMS, istoricul, contactele — totul se păstrează doar pe dispozitivul tău. Nimic nu pleacă pe server.",
-    p2_title: "SMS-urile nu se transmit",
-    p2_desc: "Conținutul SMS-urilor tale nu părăsește telefonul. Aplicația tehnic nu are ce trimite — nu avem endpoint pentru recepția SMS-urilor.",
-    p3_title: "Doar acceptarea EULA",
-    p3_desc: "Singura solicitare de rețea — un hash anonim la prima rulare, care confirmă că ai acceptat termenii de utilizare.",
-    screens_title: "Cum arată",
-    screens_subtitle: "Interfață simplă — chiar și pentru cei mai puțin obișnuiți cu tehnologia",
-    screen1_title: "Ecranul principal",
-    screen1_desc: "Se vede că aplicația funcționează. Sfaturile de siguranță sunt mereu la vedere.",
-    screen2_title: "Avertismentul",
-    screen2_desc: "Avertisment vizual puternic în momentul pericolului. Un buton — și apelul este închis.",
-    faq_title: "Întrebări frecvente",
-    faq_q1: "De ce aplicația cere atâtea permisiuni?",
-    faq_a1: "Fiecare permisiune e necesară pentru o funcție concretă. Recepția SMS — pentru analiza codurilor primite. Statusul telefonului — pentru a ști când e un apel activ. Gestionarea apelurilor — pentru ca butonul «Închide apelul» să funcționeze real. Peste ferestre — pentru ca avertismentul să apară peste ecranul apelului.",
-    faq_q2: "Codurile SMS obișnuite (Gmail, bancă la autentificare) vor declanșa avertismente?",
-    faq_a2: "Nu. Avertismentul se declanșează doar dacă codul a venit în timpul unui apel activ sau în primele 5 minute după apel. În situații obișnuite (de exemplu, primești un cod pentru email) aplicația tace.",
-    faq_q3: "Pot opri aplicația?",
-    faq_a3: "Da. În secțiunea «Setări» există butonul «Oprește ScamGuard». Aplicația se suspendă până când o pornești din nou. Nicio dată nu se șterge.",
-    faq_q4: "Cât costă aplicația?",
-    faq_a4: "Complet gratuit. Fără reclame. Fără cumpărături în aplicație. Fără abonament. Un proiect personal pentru ajutorul familiei și vecinilor.",
-    docs_title: "Documente",
-    docs_subtitle: "Informații juridice și condițiile de utilizare a aplicației",
-    docs_privacy_title: "Politica de confidențialitate",
-    docs_privacy_desc: "Ce date se prelucrează, unde se păstrează și ce se trimite pe server.",
-    docs_eula_title: "Acordul utilizatorului",
-    docs_eula_desc: "Condițiile de instalare și utilizare a aplicației, limitele răspunderii.",
-    footer_about: "Aplicație gratuită pentru detectarea escrocilor telefonici. Funcționează local pe dispozitivul tău.",
-    footer_docs: "Documente", footer_privacy: "Politica de confidențialitate", footer_eula: "Acordul utilizatorului",
-    footer_contact: "Contact", footer_madein: "Făcut în Moldova."
-  },
-  en: {
-    meta_title: "ScamGuard — alerts about phone scammers in Moldova",
-    meta_description: "Free Android app that detects signs of phone fraud and warns you. Works locally, no data transmission.",
-    nav_how: "How it works", nav_features: "Features", nav_faq: "FAQ", nav_docs: "Documents",
-    hero_title: "Alerts about phone scammers",
-    hero_subtitle: "Free Android app for Moldova residents. Detects fraud signals and warns you when a scammer calls and asks for an SMS code.",
-    cta_download: "Download APK", cta_learn: "How it works",
-    badge_free: "✓ Free", badge_local: "✓ Local on device", badge_no_ads: "✓ No ads",
-    how_title: "How it works",
-    how_subtitle: "Three steps — and the app runs in background 24/7",
-    step1_title: "Install the app",
-    step1_desc: "Download the APK and install. Free, no registration, no ads.",
-    step2_title: "Grant permissions",
-    step2_desc: "One-time setup — the app will request necessary permissions and show you how to grant them.",
-    step3_title: "The app works",
-    step3_desc: "ScamGuard runs in background. If you receive a code during a suspicious call — you'll see a warning.",
-    features_title: "Features",
-    features_subtitle: "Simple and clear feature set without extras",
-    f1_title: "SMS code recognition",
-    f1_desc: "The app detects when you receive a one-time confirmation code and correlates it with an active call.",
-    f2_title: "Call context",
-    f2_desc: "Alert triggers only if the code arrived during or right after a call. Regular SMS codes don't bother you.",
-    f3_title: "Moldova institutions database",
-    f3_desc: "Recognizes SMS from MAIB, Victoriabank, MICB, Orange, Moldcell and others — shows who sent it.",
-    f4_title: "«Hang up» button",
-    f4_desc: "Large red button in the alert ends the scammer's call immediately — no need to dig through menus.",
-    f5_title: "No internet required",
-    f5_desc: "All SMS processing happens locally on the device. Internet is only needed for update checks.",
-    f6_title: "Two interface languages",
-    f6_desc: "Russian and Romanian. Switched with one button in settings.",
-    privacy_title: "Privacy by default",
-    privacy_subtitle: "We understand that an app working with SMS requires special trust",
-    p1_title: "Everything local",
-    p1_desc: "SMS analysis, history, contacts — everything stays only on your device. Nothing goes to the server.",
-    p2_title: "SMS not transmitted",
-    p2_desc: "Your SMS content never leaves the phone. The app technically has nothing to send — we have no endpoint to receive SMS.",
-    p3_title: "Only EULA acceptance",
-    p3_desc: "The only network request — an anonymous hash on first launch confirming you accepted the terms of use.",
-    screens_title: "What it looks like",
-    screens_subtitle: "Simple interface — even for those uncomfortable with tech",
-    screen1_title: "Main screen",
-    screen1_desc: "You can see that the app is working. Safety tips are always visible.",
-    screen2_title: "Alert",
-    screen2_desc: "Loud visual warning at the moment of danger. One button — and the call is ended.",
-    faq_title: "Frequently asked questions",
-    faq_q1: "Why does the app need so many permissions?",
-    faq_a1: "Each permission is needed for a specific function. SMS reception — to analyze incoming codes. Phone state — to know when a call is active. Call management — so the «Hang up» button actually ends the call. Display over apps — so the warning appears over the call screen.",
-    faq_q2: "Will regular SMS codes (Gmail, bank login) trigger warnings?",
-    faq_a2: "No. The warning triggers only if the code arrived during an active call or within 5 minutes after the call. In normal situations (you get a code for email login, for example) the app stays silent.",
-    faq_q3: "Can I stop the app?",
-    faq_a3: "Yes. In the «Settings» section there is a «Stop ScamGuard» button. The app is paused until you start it again. No data is deleted.",
-    faq_q4: "How much does the app cost?",
-    faq_a4: "Completely free. No ads. No in-app purchases. No subscription. A personal project to help family and neighbors.",
-    docs_title: "Documents",
-    docs_subtitle: "Legal information and terms of use",
-    docs_privacy_title: "Privacy Policy",
-    docs_privacy_desc: "What data is processed, where it's stored and what is sent to the server.",
-    docs_eula_title: "Terms of Use",
-    docs_eula_desc: "Conditions for installing and using the app, limitations of liability.",
-    footer_about: "Free app for detecting phone scammers. Works locally on your device.",
-    footer_docs: "Documents", footer_privacy: "Privacy Policy", footer_eula: "Terms of Use",
-    footer_contact: "Contact", footer_madein: "Made in Moldova."
-  }
-};
+async function loadLang(lang) {
+  if (cache[lang]) return cache[lang];
+  const res = await fetch(`i18n/${lang}.json`);
+  const data = await res.json();
+  cache[lang] = data;
+  return data;
+}
 
-function applyLang(lang) {
-  if (!i18n[lang]) lang = 'ru';
+async function applyLang(lang) {
+  if (!labels[lang]) lang = 'en';
+  const dict = await loadLang(lang);
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     const attr = el.dataset.i18nAttr;
-    if (i18n[lang][key] === undefined) return;
-    if (attr) el.setAttribute(attr, i18n[lang][key]);
-    else el.textContent = i18n[lang][key];
+    if (dict[key] === undefined) return;
+    if (attr) el.setAttribute(attr, dict[key]);
+    else el.textContent = dict[key];
   });
   document.querySelectorAll('.lang-menu a').forEach(a => {
     a.classList.toggle('active', a.dataset.lang === lang);
@@ -488,9 +305,9 @@ navLinks.querySelectorAll('a').forEach(a => {
 
 (function init() {
   let lang = location.hash.replace('#', '') || localStorage.getItem('sg_lang');
-  if (!i18n[lang]) {
-    const browser = (navigator.language || 'ru').slice(0, 2).toLowerCase();
-    lang = i18n[browser] ? browser : 'ru';
+  if (!labels[lang]) {
+    const browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    lang = labels[browser] ? browser : 'en';
   }
   applyLang(lang);
 })();
